@@ -1,0 +1,57 @@
+html, body {
+      overflow-x: hidden;
+      max-width: 100%;
+      min-height: 100%;
+      margin: 0;
+      padding: 0;
+      background: url('/images/coode_11zon.jpg') center/cover no-repeat fixed;
+    }
+
+    .content-wrapper::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.3);
+      z-index: 0;
+    }
+
+    .offcanvas { width: 200px !important; }
+    #hamburger-btn { top: 1rem; left: 1rem; z-index:1050; position: fixed; }
+
+    #geoButton {
+      margin-bottom: 12px;
+    }
+    #theme-toggle {
+      height: 37px;
+    }
+
+    .profile-card {
+      background: rgba(255,255,255,0.9);
+      border-radius: 1rem;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+      overflow: hidden;
+      position: relative;
+      z-index: 1;
+    }
+
+    [data-bs-theme="dark"] .profile-card {
+      background: rgba(33,33,33,0.9);
+    }
+
+    .profile-header {
+      background: linear-gradient(120deg, #007bff, #6610f2);
+      height: 150px;
+    }
+
+    .profile-img {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid white;
+      margin-top: -70px;
+    }
+
+    .info-list li {
+      margin-bottom: .5rem;
+    }

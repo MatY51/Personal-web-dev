@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Projekty ZDS</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <script src="/scripts/canvas+menu.js"></script>
+
+  <link rel="stylesheet" href="/styles/projektyZDS_style.css">   
+
+</head>
+<body>
+
+  <!-- Offcanvas menu -->
+  <div class="offcanvas offcanvas-start" tabindex="-1" id="sidebar">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title">Menu</h5>
+      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
+    </div>
+    <div class="offcanvas-body d-flex flex-column p-0">
+      <ul class="nav flex-column">
+        <li class="nav-item"><a class="nav-link link-body-emphasis" href="index.html">🏠 Úvod</a></li>
+        <li class="nav-item"><a class="nav-link link-body-emphasis" href="projekty.html">💻 Projekty</a></li>
+        <li class="nav-item"><a class="nav-link link-body-emphasis" href="kontakt.html">📧 Kontakt</a></li>
+        <li class="nav-item"><a class="nav-link link-body-emphasis" href="studium.html">📚 Studium</a></li>
+      </ul>
+      <div class="mt-auto ps-3 pb-3">
+        <button id="geoButton" class="btn btn-outline-secondary btn-sm-3 px-3">🌤 Počasí</button>
+        <button id="theme-toggle" class="btn btn-outline-secondary btn-sm px-3">🌙 Téma</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hamburger -->
+  <button id="hamburger-btn" class="btn btn-outline-secondary m-3 position-fixed" 
+          type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="sidebar">
+    ☰ Menu
+  </button>
+
+  <!-- Obsah -->
+  <div class="content-wrapper">
+    <div class="container py-4"><!-- container pro hezké okraje -->
+
+      <!-- Projekty navbar -->
+      <nav id="project-navbar" class="navbar navbar-expand-lg sticky-top mb-4 rounded">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Projekty ZDS</a>
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item"><a class="nav-link" href="#projekt1">Minimalizace Booleanových funkcí</a></li>
+            <li class="nav-item"><a class="nav-link" href="#projekt2">Pevná řádová čárka</a></li>
+          </ul>
+        </div>
+      </nav>
+
+      <!-- Sekce projekt 1 -->
+      <section id="projekt1">
+        <div class="project-card">
+          <h3>Minimalizace Booleanových funkcí</h3>
+          <p><strong>Popis projektu:</strong> minimalizace Boolean funkcí pomocí Karnaughovy mapy a jejich realizace pomocí logických hradel.</p>
+          <p><strong>Nástroje:</strong> Papír, tužka, stavebnice s logickými hradly NOT a NAND, případná simulace (LOGO! Soft Comfort).</p>
+          <p><strong>Postup řešení:</strong></p>
+          <ol>
+            <li>Určení počtu vstupních proměnných a vytvoření odpovídající pravdivostní tabulky</li>
+            <li>Vyplnění výstupních hodnot funkce pro všechny kombinace vstupů</li>
+            <li>Přepis výstupů do Karnaughovy mapy podle odpovídajících kombinací proměnných</li>
+            <li>Vytvoření smyček (skupin 1, 2, 4, 8...) pro zjednodušení výrazů</li>
+            <li>Odvození minimalizovaného logického výrazu ve tvaru součtu součinů (SOP) nebo součinu součtů (POS)</li>
+            <li>Realizace minimalizované funkce pomocí logických hradel NAND a NOT</li>
+          </ol>
+          <p><strong>Výsledek:</strong> Optimalizované Booleanovy funkce zapojené na stavebnici.</p>
+        
+          <div class="d-flex mt-4" style="justify-content: space-around;">
+            <a href="/files/ZDS1 - zadani.pdf" class="btn btn-outline-primary">Stáhnout zadání PDF</a>
+            <a href="/files/ZDS1 - reseni.pdf" class="btn btn-outline-primary">Stáhnout řešení PDF</a>
+            <a href="/files/ZDS1 - zapojeni.lsc" class="btn btn-outline-primary">Stáhnout zapojení LSC</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Sekce projekt 2 -->
+      <section id="projekt2">
+        <div class="project-card">
+        <h3>Zobrazení čísel v pevné řádové čárce</h3>
+        <p><strong>Popis projektu:</strong> převod reálných čísel do formátu pevné řádové čárky (Q-formát), práce se 16bitovou reprezentací a provádění aritmetických operací včetně zpětného převodu na reálné hodnoty</p>
+        <p><strong>Nástroje:</strong> Kalkulačka, tužka a papír</p>
+        <p><strong>Postup řešení:</strong></p>
+        <ol>
+          <li>Výpočet škálovacího faktoru podle zvoleného Q-formátu (např. <code>2^10</code> u Q5.10 nebo <code>2^3</code> u Q10.3)</li>
+          <li>Převod zadaného reálného čísla na celočíselnou reprezentaci pomocí škálování</li>
+          <li>Zápis hodnoty do 16bitové podoby se znaménkem (signed 16-bit)</li>
+          <li>Převod výsledku do hexadecimálního tvaru vždy na 4 platné hexadecimální číslice (<code>[XXXX]</code>)</li>
+          <li>Provádění aritmetických operací (součet, rozdíl) přímo na 16bitových hodnotách</li>
+          <li>Převod výsledků zpět na reálné číslo dělením odpovídajícím faktorem a zaokrouhlení na 2 desetinná místa</li>
+        </ol>
+        <p><strong>Výsledek:</strong> Převody mezi Q-formáty, hexadecimální a reálnou reprezentací a výpočty provedené pro více sad vstupních údajů (např. pro formáty Q5.10, Q10.3, aj.)</p>
+
+        <div class="d-flex mt-4" style="justify-content: space-around;">
+          <a href="/files/ZDS2 - zadani.pdf" class="btn btn-outline-primary">Stáhnout zadání PDF</a>
+          <a href="/files/ZDS2 - reseni.pdf" class="btn btn-outline-primary">Stáhnout řešení PDF</a>
+        </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+  <div class="modal fade" id="weatherModal" tabindex="-1" aria-labelledby="weatherModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="weatherModalLabel">Počasí na tvém místě</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Zavřít"></button>
+        </div>
+        <div class="modal-body text-center">
+          <div id="weatherContent">
+            <div class="spinner-border text-primary" role="status">
+              <span class="visually-hidden">Načítám...</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Přepínání tématu -->
+  <script src="/scripts/theme.js"></script>
+
+  <!-- Skript pro zjištění polohy a počasí -->
+  <script src="/scripts/weather.js"></script>
+
+</body>
+</html>

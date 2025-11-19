@@ -1,0 +1,58 @@
+
+    html, body {
+      overflow-x: hidden;
+      max-width: 100%;
+      touch-action: pan-y;
+      overscroll-behavior: none;
+      background-color: var(--bs-body-bg);
+    }
+
+    /* Offcanvas šířka */
+    .offcanvas { width: 200px !important; }
+
+    /* Wrapper obsah */
+    .content-wrapper {
+      width: 100%;
+      transition: margin-left 0.3s ease;
+      padding-top: 3.5rem;
+    }
+
+    @media(min-width:768px){
+      .offcanvas.show ~ .content-wrapper {
+        margin-left: 220px;
+        width: calc(100% - 220px); /* škálování obsahu při otevření menu */
+      }
+    }
+    #geoButton {
+      margin-bottom: 12px;
+    }
+
+    /* Hamburger fixně nahoře */
+    #hamburger-btn { top: 1rem; left:1rem; z-index:1050; position: fixed; }
+
+    /* Navbar pro scroll na projekty */
+    #project-navbar {
+      background-color: rgba(var(--bs-body-color-rgb), 0.05); /* světlejší/tmavší pozadí podle tématu */
+      border: 1px solid rgba(var(--bs-border-color-rgb), 0.2);
+    }
+    #project-navbar .navbar-brand,
+    #project-navbar .nav-link {
+      color: var(--bs-body-color);
+    }
+    #project-navbar .nav-link:hover {
+      color: var(--bs-primary);
+    }
+    #theme-toggle {
+      height: 37px;
+    }
+
+
+    /* Card styl */
+    .project-card {
+      background-color: rgba(var(--bs-body-color-rgb), 0.1); /* světlé/tmavé pozadí podle tématu */
+      border: 1px solid rgba(var(--bs-border-color-rgb), 0.2);
+      color: var(--bs-body-color);
+      padding: 2rem;
+      border-radius: 0.5rem;
+      margin-bottom: 3rem;
+    }

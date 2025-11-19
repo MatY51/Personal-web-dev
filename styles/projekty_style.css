@@ -1,0 +1,87 @@
+
+  html, body {
+    overflow-x: hidden;
+    max-width: 100%;
+    touch-action: pan-y;
+    overscroll-behavior: none;
+    background: url('/images/coode_11zon.jpg') center/cover no-repeat fixed;
+  }
+
+  /* Offcanvas */
+  .offcanvas { width: 200px !important; }
+
+  /* Wrapper obsah */
+  .content-wrapper {
+    width: 100%;
+    padding-top: 4.5rem;
+    transition: margin-left 0.3s ease;
+    box-sizing: border-box;
+  }
+  .intro-card {
+    margin-top: 3.5rem; /* odsazení pod hamburger/offcanvas */
+  }
+
+  /* Podpora zmenšení při otevřeném menu */
+  @media(min-width:768px){
+    .offcanvas.show ~ .content-wrapper {
+      margin-left: 220px !important;
+      width: calc(100% - 220px);
+    }
+  }
+  #geoButton {
+        margin-bottom: 12px;
+  }
+  #theme-toggle {
+        height: 37px;
+      }
+
+  /* Hamburger fixně nahoře */
+  #hamburger-btn { top: 1rem; left:1rem; z-index:1050; position: fixed; }
+
+  /* RGB proměnné pro průhlednost podle tématu */
+  :root {
+    --bs-body-bg-rgb: 33, 37, 41; /* tmavé pozadí */
+  }
+  [data-bs-theme="light"] {
+    --bs-body-bg-rgb: 255, 255, 255; /* světlé pozadí */
+  }
+
+  /* Úvodní okno „Moje projekty“ */
+  .intro-card {
+    background-color: rgba(var(--bs-body-bg-rgb), 0.95); /* průsvitné podle tématu */
+    color: var(--bs-body-color);
+    border-radius: 1rem;
+    padding: 2rem;
+    margin-bottom: 3rem;
+    text-align: center;
+    box-shadow: 0 0.25rem 0.75rem rgba(0,0,0,0.1);
+  }
+
+  /* Okna projektů */
+  .project-card {
+    background-color: rgba(var(--bs-body-bg-rgb), 0.95); /* průsvitné podle tématu */
+    color: var(--bs-body-color);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    border: 1px solid rgba(0,0,0,0.8);
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0.25rem 0.75rem rgba(0,0,0,0.1);
+  }
+
+  /* Obrázky projektů */
+  .card-img-top {
+    height: 180px;
+    width: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* Tlačítka vycentrovaná */
+  .project-card .btn-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: auto;
+  }

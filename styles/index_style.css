@@ -1,0 +1,96 @@
+
+    html, body {
+      overflow-x: hidden;   /* zakáže jen horizontální scroll */
+      overflow-y: auto;     /* dovolí vertikální scroll (posun dolů) */
+      height: 100%;     /* zajistí, že wrapper vyplní celý viewport */
+      margin: 0;
+      padding: 0;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('/images/coode_11zon.jpg') center/cover no-repeat;
+      z-index: -1; /* aby byl za vším obsahem */
+    }
+
+
+    /* Wrapper pro celé pozadí */
+    .content-wrapper {
+      position: relative;
+    }
+
+    /* Jemný overlay přes celý wrapper */
+    .content-wrapper::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.3);
+      z-index: 0;
+      backdrop-filter: blur(2px);
+    }
+
+    /* Hero sekce */
+    .hero {
+      height: 50vh;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-align: center;
+      background: transparent; /* žádný obrázek zde */
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 600px;
+    }
+
+    .overview-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+      position: relative;
+      z-index: 1;
+    }
+
+    .overview-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    }
+
+    /* Offcanvas šířka */
+    .offcanvas {
+      width: 200px !important;
+    }
+
+    /* Wrapper obsah + posun při otevřeném menu */
+    .content-wrapper {
+      transition: margin-left 0.3s ease;
+    }
+
+    @media (min-width: 768px) {
+      .offcanvas.show ~ .content-wrapper {
+        margin-left: 220px !important;
+      }
+    }
+    #geoButton {
+      margin-bottom: 12px;
+    }
+
+    /* Hamburger fixně nahoře */
+    #hamburger-btn {
+      top: 1rem;
+      left: 1rem;
+      z-index: 1050;
+      position: fixed;
+    }
+
+    #theme-toggle {
+      height: 37px;
+    }

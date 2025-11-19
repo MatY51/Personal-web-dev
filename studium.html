@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale1.0, user-scalable=no">
+  <title>Studium</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <script src="/scripts/canvas+menu.js"></script>
+
+  <link rel="stylesheet" href="/styles/studium_style.css">    
+
+</head>
+<body>
+
+  <!-- Offcanvas menu -->
+  <div class="offcanvas offcanvas-start" tabindex="-1" id="sidebar">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title">Menu</h5>
+      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
+    </div>
+    <div class="offcanvas-body d-flex flex-column p-0">
+      <ul class="nav flex-column">
+        <li class="nav-item"><a class="nav-link link-body-emphasis" href="index.html">🏠 Úvod</a></li>
+        <li class="nav-item"><a class="nav-link link-body-emphasis" href="projekty.html">💻 Projekty</a></li>
+        <li class="nav-item"><a class="nav-link link-body-emphasis" href="kontakt.html">📧 Kontakt</a></li>
+        <li class="nav-item"><a class="nav-link link-body-emphasis" href="studium.html">📚 Studium</a></li>
+      </ul>
+      <div class="mt-auto ps-3 pb-3">
+        <button id="geoButton" class="btn btn-outline-secondary btn-sm-3 px-3">🌤 Počasí</button>
+        <button id="theme-toggle" class="btn btn-outline-secondary btn-sm px-3">🌙 Téma</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hamburger -->
+  <button id="hamburger-btn" class="btn btn-outline-secondary m-3" 
+          type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="sidebar">
+    ☰ Menu
+  </button>
+
+  <!-- Obsah -->
+  <div class="content-wrapper position-relative py-5">
+    <div class="container mt-4">
+
+      <!-- Sekce: O škole -->
+      <div class="section-card text-center">
+        <h1 class="mb-3">Studium na VŠB – Technické univerzitě Ostrava</h1>
+        <p class="lead">Studuji na Fakultě elektrotechniky a informatiky, obor <strong>Informatika</strong>.</p>
+        <p>
+          Studium je zaměřeno na informační technologie, programování, hardware i software. 
+        </p>
+      </div>
+
+      <!-- Timeline -->
+      <div class="section-card">
+        <h2 class="mb-4 text-center">Moje studijní cesta</h2>
+        <div class="timeline">
+          <div class="timeline-item">
+            <h5>2025 – současnost</h5>
+            <p><strong>VŠB-TU Ostrava</strong> – Fakulta elektrotechniky a informatiky<br>Obor: Informatika</p>
+          </div>
+          <div class="timeline-item">
+            <h5>2021 – 2025</h5>
+            <p><strong>Střední průmyslová škola elektrotechnická, Olomouc</strong><br>Elektrotechnické vzdělání s důrazem na matematiku a IT</p>
+          </div>
+          <div class="timeline-item">
+            <h5>2012 – 2021</h5>
+            <p><strong>Základní škola Olomouc</strong><br>Základní vzdělání</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Zajímavé předměty -->
+      <div class="section-card">
+        <h2 class="mb-4 text-center">Další předměty 1. semestru</h2>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+          <div class="col">
+            <div class="subject-card p-3 h-100">
+              <h5>⚖️ Právo v ICT</h5>
+              <p>Právní základy v oblasti IT – ochrana dat, autorská práva, odpovědnost a právní rámec technologií</p>
+            </div>
+          </div>
+          <div class="col">
+            <div class="subject-card p-3 h-100">
+              <h5>💾 Základy digitálních systémů</h5>
+              <p>Logické obvody, číselné soustavy a návrh jednoduchých digitálních zařízení</p>
+            </div>
+          </div>
+          <div class="col">
+            <div class="subject-card p-3 h-100">
+              <h5>🧠 Úvod do logického myšlení</h5>
+              <p>Seznámení s principy logiky, množin a důkazových metod použitelných v informatice</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+  <div class="modal fade" id="weatherModal" tabindex="-1" aria-labelledby="weatherModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="weatherModalLabel">Počasí na tvém místě</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Zavřít"></button>
+        </div>
+        <div class="modal-body text-center">
+          <div id="weatherContent">
+            <div class="spinner-border text-primary" role="status">
+              <span class="visually-hidden">Načítám...</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Přepínání tématu -->
+  <script src="/scripts/theme.js"></script>
+
+  <!-- Skript pro zjištění polohy a počasí -->
+  <script src="/scripts/weather.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,87 @@
+
+    html, body {
+      overflow-x: hidden;
+      max-width: 100%;
+      background: url('/images/coode_11zon.jpg') center/cover no-repeat fixed;
+      min-height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    .content-wrapper::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.3);
+      z-index: 0;
+    }
+
+    .offcanvas { width: 200px !important; }
+    #hamburger-btn { top: 1rem; left: 1rem; z-index:1050; position: fixed; }
+
+    #geoButton {
+      margin-bottom: 12px;
+    }
+    #theme-toggle {
+      height: 37px;
+    }
+
+    .section-card {
+        background-color: rgba(var(--bs-body-bg-rgb, 33,33,33), 0.95);
+        color: var(--bs-body-color);
+        border-radius: 1rem;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        padding: 2rem;
+        margin-bottom: 3rem;
+        position: relative;
+        z-index: 1;
+    }
+
+    /* Timeline */
+    .timeline {
+      position: relative;
+      padding-left: 30px;
+      margin-top: 2rem;
+    }
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 0px;
+      top: 0;
+      width: 2px;
+      height: 100%;
+      background: #0d6efd;
+    }
+    .timeline-item {
+      position: relative;
+      margin-bottom: 2rem;
+    }
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -20px;
+      top: 8px;
+      width: 12px;
+      height: 12px;
+      background: #0d6efd;
+      border-radius: 50%;
+    }
+
+    /* Cards for subjects */
+    .subject-card {
+        background-color: rgba(var(--bs-body-bg-rgb, 33,33,33), 0.08);
+        color: var(--bs-body-color);
+        border: 1px solid rgba(255,255,255,0.1);
+        border-radius: 0.75rem;
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .subject-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    }
+    :root {
+    --bs-body-bg-rgb: 33,37,41; /* tmavé pozadí */
+    }
+    [data-bs-theme="light"] {
+    --bs-body-bg-rgb: 255,255,255; /* světlé pozadí */
+    }

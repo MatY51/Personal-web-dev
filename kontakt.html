@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Kontakt</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <script src="/scripts/canvas+menu.js"></script>
+
+  <link rel="stylesheet" href="/styles/kontakt_style.css">
+  
+</head>
+<body>
+
+  <!-- Offcanvas menu -->
+  <div class="offcanvas offcanvas-start" tabindex="-1" id="sidebar">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title">Menu</h5>
+      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
+    </div>
+    <div class="offcanvas-body d-flex flex-column p-0">
+      <ul class="nav flex-column">
+        <li class="nav-item"><a class="nav-link link-body-emphasis" href="index.html">🏠 Úvod</a></li>
+        <li class="nav-item"><a class="nav-link link-body-emphasis" href="projekty.html">💻 Projekty</a></li>
+        <li class="nav-item"><a class="nav-link link-body-emphasis" href="kontakt.html">📧 Kontakt</a></li>
+        <li class="nav-item"><a class="nav-link link-body-emphasis" href="studium.html">📚 Studium</a></li>
+      </ul>
+      <div class="mt-auto ps-3 pb-3">
+        <button id="geoButton" class="btn btn-outline-secondary btn-sm-3 px-3">🌤 Počasí</button>
+        <button id="theme-toggle" class="btn btn-outline-secondary btn-sm px-3">🌙 Téma</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hamburger -->
+  <button id="hamburger-btn" class="btn btn-outline-secondary m-3" 
+          type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="sidebar">
+    ☰ Menu
+  </button>
+
+  <!-- Obsah -->
+  <div class="content-wrapper position-relative py-5">
+    <div class="container mt-5">
+
+      <!-- Profil -->
+      <div class="row justify-content-center mb-5">
+        <div class="col-md-8">
+          <div class="profile-card text-center p-4">
+            <div class="profile-header"></div>
+            <img src="/images/profileFoto.png" alt="Profilová fotka" class="profile-img">
+            <h2 class="mt-3 mb-1">Matyáš Vysloužil</h2>
+            <p class="text-muted">Student informatiky | VYS0087</p>
+            <hr>
+            <ul class="list-unstyled info-list text-start px-4">
+              <li><strong>Věk:</strong> 20 let</li>
+              <li><strong>Škola:</strong> VŠB – Technická univerzita Ostrava</li>
+              <li><strong>Obor:</strong> Informatika</li>
+              <li><strong>Bydliště:</strong> Olomouc, Česká republika</li>
+              <li><strong>Zájmy:</strong> Lyžování, stolní tenis, AI, video, drony</li>
+            </ul>
+            <p class="mt-4">
+              Jsem student informatiky se zájmem o technologie, drony a design.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Kontakt -->
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+          <div class="profile-card p-4">
+            <h3 class="mb-4 text-center">Kontakt</h3>
+
+            <div class="d-flex justify-content-center gap-4 mb-4">
+              <a href="mailto:jan.novak@email.cz" class="btn btn-outline-primary">📧 E-mail</a>
+              <a href="https://github.com/MatY51" target="_blank" class="btn btn-outline-primary">💻 GitHub</a>
+            </div>
+
+            <form>
+              <div class="mb-3">
+                <label for="name" class="form-label">Jméno</label>
+                <input type="text" id="name" class="form-control" placeholder="Zadejte své jméno">
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">E-mail</label>
+                <input type="email" id="email" class="form-control" placeholder="např. vase@adresa.cz">
+              </div>
+              <div class="mb-3">
+                <label for="message" class="form-label">Zpráva</label>
+                <textarea id="message" rows="4" class="form-control" placeholder="Napište mi..."></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary w-100">Odeslat zprávu</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+  <div class="modal fade" id="weatherModal" tabindex="-1" aria-labelledby="weatherModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="weatherModalLabel">Počasí na tvém místě</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Zavřít"></button>
+        </div>
+        <div class="modal-body text-center">
+          <div id="weatherContent">
+            <div class="spinner-border text-primary" role="status">
+              <span class="visually-hidden">Načítám...</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Přepínání tématu -->
+  <script src="/scripts/theme.js"></script>
+
+  <!-- Skript pro zjištění polohy a počasí -->
+  <script src="/scripts/weather.js"></script>
+
+</body>
+</html>

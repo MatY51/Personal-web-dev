@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Home</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/styles/index_style.css">
+
+  
+  <!-- Skript pro nastavení tématu a offcanvas -->
+  <script src="/scripts/index_canvas+menu.js"></script>
+   
+
+</head>
+<body>
+
+  <!-- Offcanvas menu -->
+  <div class="offcanvas offcanvas-start" tabindex="-1" id="sidebar">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title">Menu</h5>
+      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
+    </div>
+      <div class="offcanvas-body d-flex flex-column p-0">
+        <ul class="nav flex-column">
+          <li class="nav-item"><a class="nav-link link-body-emphasis" href="index.html">🏠 Úvod</a></li>
+          <li class="nav-item"><a class="nav-link link-body-emphasis" href="projekty.html">💻 Projekty</a></li>
+          <li class="nav-item"><a class="nav-link link-body-emphasis" href="kontakt.html">📧 Kontakt</a></li>
+          <li class="nav-item"><a class="nav-link link-body-emphasis" href="studium.html">📚 Studium</a></li>
+        </ul>
+
+        <!-- Kratší tlačítko dole -->
+        <div class="mt-auto ps-3 pb-3">
+          <button id="geoButton" class="btn btn-outline-secondary btn-sm-3 px-3">🌤 Počasí</button>
+          <button id="theme-toggle" class="btn btn-outline-secondary btn-sm-3 px-3">
+            🌙 Téma
+          </button>
+        </div>
+      </div>
+  </div>
+
+  <!-- Hamburger tlačítko -->
+  <button id="hamburger-btn" class="btn btn-outline-secondary m-3" 
+          type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="sidebar">
+    ☰ Menu
+  </button>
+
+  <!-- Obsah stránky -->
+  <div class="content-wrapper">
+    <main class="container-fluid p-0">
+      <!-- Hero sekce -->
+      <section class="hero mb-5">
+        <div class="hero-content">
+          <h1 class="display-4 fw-bold mb-3">Vítej na mém webu!</h1>
+          <p class="lead mb-4">
+            Jsem <strong>Matyáš</strong> a <span id="dynamic-text">tohle je můj webový ZIT projekt</span>
+          </p>
+          <div>
+            <a href="https://github.com/MatY51/Personal-web-dev" class="btn btn-primary btn-lg px-4 me-3">GitHub</a>
+            <a href="https://www.fei.vsb.cz/cs/index.html" class="btn btn-outline-primary btn-lg px-4">Škola</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Přehled webu -->
+      <section class="container py-5">
+        <div class="row text-center g-4">
+          <div class="col-md-4">
+            <a href="projekty.html" class="card overview-card p-3 h-100 text-decoration-none text-body">
+              <h5>💻 Projekty</h5>
+              <p>Podívej se na mé semestrální projekty</p>
+            </a>
+          </div>
+          <div class="col-md-4">
+            <a href="studium.html" class="card overview-card p-3 h-100 text-decoration-none text-body">
+              <h5>📚 Studium</h5>
+              <p>Co studuji a jaké technologie mě zajímají</p>
+            </a>
+          </div>
+          <div class="col-md-4">
+            <a href="kontakt.html" class="card overview-card p-3 h-100 text-decoration-none text-body">
+              <h5>📧 Kontakt</h5>
+              <p>Najdi mě na GitHubu nebo mi napiš email</p>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+  <div class="modal fade" id="weatherModal" tabindex="-1" aria-labelledby="weatherModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="weatherModalLabel">Počasí na tvém místě</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Zavřít"></button>
+        </div>
+        <div class="modal-body text-center">
+          <div id="weatherContent">
+            <div class="spinner-border text-primary" role="status">
+              <span class="visually-hidden">Načítám...</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Přepínání tématu -->
+  
+  <script src="/scripts/theme.js"></script>
+
+  <!-- Skript pro zjištění polohy a počasí -->
+  <script src="/scripts/weather.js"></script>
+
+</body>
+</html>
