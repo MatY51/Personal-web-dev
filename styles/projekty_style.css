@@ -7,10 +7,8 @@
     background: url('../images/coode_11zon.jpg') center/cover no-repeat fixed;
   }
 
-  /* Offcanvas */
   .offcanvas { width: 200px !important; }
 
-  /* Wrapper obsah */
   .content-wrapper {
     width: 100%;
     padding-top: 4.5rem;
@@ -18,10 +16,9 @@
     box-sizing: border-box;
   }
   .intro-card {
-    margin-top: 3.5rem; /* odsazení pod hamburger/offcanvas */
+    margin-top: 3.5rem;
   }
 
-  /* Podpora zmenšení při otevřeném menu */
   @media(min-width:768px){
     .offcanvas.show ~ .content-wrapper {
       margin-left: 220px !important;
@@ -35,20 +32,17 @@
         height: 37px;
       }
 
-  /* Hamburger fixně nahoře */
   #hamburger-btn { top: 1rem; left:1rem; z-index:1050; position: fixed; }
 
-  /* RGB proměnné pro průhlednost podle tématu */
   :root {
-    --bs-body-bg-rgb: 33, 37, 41; /* tmavé pozadí */
+    --bs-body-bg-rgb: 33, 37, 41;
   }
   [data-bs-theme="light"] {
-    --bs-body-bg-rgb: 255, 255, 255; /* světlé pozadí */
+    --bs-body-bg-rgb: 255, 255, 255;
   }
 
-  /* Úvodní okno „Moje projekty“ */
   .intro-card {
-    background-color: rgba(var(--bs-body-bg-rgb), 0.95); /* průsvitné podle tématu */
+    background-color: rgba(var(--bs-body-bg-rgb), 0.95);
     color: var(--bs-body-color);
     border-radius: 1rem;
     padding: 2rem;
@@ -57,9 +51,8 @@
     box-shadow: 0 0.25rem 0.75rem rgba(0,0,0,0.1);
   }
 
-  /* Okna projektů */
   .project-card {
-    background-color: rgba(var(--bs-body-bg-rgb), 0.95); /* průsvitné podle tématu */
+    background-color: rgba(var(--bs-body-bg-rgb), 0.95);
     color: var(--bs-body-color);
     border-radius: 0.75rem;
     padding: 1.5rem;
@@ -70,7 +63,6 @@
     box-shadow: 0 0.25rem 0.75rem rgba(0,0,0,0.1);
   }
 
-  /* Obrázky projektů */
   .card-img-top {
     height: 180px;
     width: 100%;
@@ -78,7 +70,6 @@
     display: block;
   }
 
-  /* Tlačítka vycentrovaná */
   .project-card .btn-wrapper {
     display: flex;
     justify-content: center;

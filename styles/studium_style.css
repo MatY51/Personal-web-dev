@@ -37,7 +37,6 @@
         z-index: 1;
     }
 
-    /* Timeline */
     .timeline {
       position: relative;
       padding-left: 30px;
@@ -67,7 +66,6 @@
       border-radius: 50%;
     }
 
-    /* Cards for subjects */
     .subject-card {
         background-color: rgba(var(--bs-body-bg-rgb, 33,33,33), 0.08);
         color: var(--bs-body-color);
@@ -80,8 +78,8 @@
       box-shadow: 0 10px 20px rgba(0,0,0,0.3);
     }
     :root {
-    --bs-body-bg-rgb: 33,37,41; /* tmavé pozadí */
+    --bs-body-bg-rgb: 33,37,41;
     }
     [data-bs-theme="light"] {
-    --bs-body-bg-rgb: 255,255,255; /* světlé pozadí */
+    --bs-body-bg-rgb: 255,255,255;
     }

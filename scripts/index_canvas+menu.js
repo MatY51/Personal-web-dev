@@ -1,6 +1,5 @@
 
   document.addEventListener('DOMContentLoaded', () => {
-    // Téma
     const stored = localStorage.getItem('theme');
     if (stored) {
       if (stored === 'auto') {
@@ -18,7 +17,6 @@
       );
     }
 
-    // Offcanvas + hamburger
     const sidebar = document.getElementById('sidebar');
     const hamburger = document.getElementById('hamburger-btn');
 
