@@ -4,7 +4,7 @@
     max-width: 100%;
     touch-action: pan-y;
     overscroll-behavior: none;
-    background: url('/images/coode_11zon.jpg') center/cover no-repeat fixed;
+    background: url('../images/coode_11zon.jpg') center/cover no-repeat fixed;
   }
 
   /* Offcanvas */

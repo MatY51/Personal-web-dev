@@ -4,7 +4,7 @@ html, body {
       min-height: 100%;
       margin: 0;
       padding: 0;
-      background: url('/images/coode_11zon.jpg') center/cover no-repeat fixed;
+      background: url('../images/coode_11zon.jpg') center/cover no-repeat fixed;
     }
 
     .content-wrapper::before {

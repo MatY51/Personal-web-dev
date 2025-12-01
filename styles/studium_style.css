@@ -2,7 +2,7 @@
     html, body {
       overflow-x: hidden;
       max-width: 100%;
-      background: url('/images/coode_11zon.jpg') center/cover no-repeat fixed;
+      background: url('../images/coode_11zon.jpg') center/cover no-repeat fixed;
       min-height: 100%;
       margin: 0;
       padding: 0;

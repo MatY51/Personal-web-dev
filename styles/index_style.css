@@ -13,7 +13,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: url('/images/coode_11zon.jpg') center/cover no-repeat;
+      background: url('../images/coode_11zon.jpg') center/cover no-repeat;
       z-index: -1; /* aby byl za vším obsahem */
     }
 
